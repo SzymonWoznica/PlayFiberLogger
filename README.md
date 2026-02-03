@@ -2,9 +2,14 @@
 
 ---
 
-## [ENGLISH VERSION]
+## [ENGLISH]
+
+## 📸 Interface
+<img width="418" height="719" alt="Application screenshot" src="https://github.com/user-attachments/assets/cdf04b0c-5872-400a-ba89-4d4fa1b30d04" />
+
 
 A desktop diagnostic tool for real-time monitoring and logging fiber optic parameters from Play (Poland) routers (model NP6089G). Built with .NET 8 and WPF.
+
 
 ### ✨ Features
 
@@ -33,7 +38,11 @@ A desktop diagnostic tool for real-time monitoring and logging fiber optic param
 
 ---
 
-## [WERSJA POLSKA]
+## [POLISH]
+
+## 📸 Interface
+<img width="418" height="719" alt="Application screenshot" src="https://github.com/user-attachments/assets/cdf04b0c-5872-400a-ba89-4d4fa1b30d04" />
+
 
 Narzędzie diagnostyczne do monitorowania i logowania parametrów światłowodu w czasie rzeczywistym z routerów sieci Play (modelu NP6089G). Aplikacja zbudowana w technologii .NET 8 i WPF.
 
