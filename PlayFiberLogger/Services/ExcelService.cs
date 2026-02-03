@@ -26,12 +26,13 @@ namespace PlayFiberLogger.Services
                 worksheet.Cell(1, 2).Value = "Rx Power [dBm]";
                 worksheet.Cell(1, 3).Value = "Tx Power [dBm]";
                 worksheet.Cell(1, 4).Value = "Temperatura [°C]";
-                worksheet.Cell(1, 5).Value = "Napięcie [mV]";
-                worksheet.Cell(1, 6).Value = "Status";
+                worksheet.Cell(1, 5).Value = "Napięcie [V]";
+                worksheet.Cell(1, 6).Value = "Prąd wejściowy [mA]";
+                worksheet.Cell(1, 7).Value = "Status";
 
                 // Header format
-                worksheet.Range("A1:F1").Style.Font.Bold = true;
-                worksheet.Range("A1:F1").Style.Fill.BackgroundColor = XLColor.LightGray;
+                worksheet.Range("A1:G1").Style.Font.Bold = true;
+                worksheet.Range("A1:G1").Style.Fill.BackgroundColor = XLColor.LightGray;
 
                 workbook.SaveAs(_filePath);
             }
@@ -51,8 +52,9 @@ namespace PlayFiberLogger.Services
                 worksheet.Cell(nextRow, 2).Value = metrics.RxPower;
                 worksheet.Cell(nextRow, 3).Value = metrics.TxPower;
                 worksheet.Cell(nextRow, 4).Value = metrics.Temperature;
-                worksheet.Cell(nextRow, 5).Value = metrics.Voltage;
-                worksheet.Cell(nextRow, 6).Value = metrics.Status;
+                worksheet.Cell(nextRow, 5).Value = (decimal)metrics.Voltage / 1000m;
+                worksheet.Cell(nextRow, 6).Value = metrics.BiasCurrent;
+                worksheet.Cell(nextRow, 7).Value = metrics.Status;
 
                 workbook.Save();
             }

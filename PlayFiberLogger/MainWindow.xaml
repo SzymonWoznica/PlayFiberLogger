@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlayFiberLogger"
         mc:Ignorable="d"
-        Title="Play Fiber Logger" Height="716" Width="800">
+        Title="Play Fiber Logger" Height="735" Width="440">
     <Grid>
         <StackPanel Margin="20">
             <Label Content="Model urządzenia:"/>
             <ComboBox x:Name="ModelSelector" Margin="0,0,0,10" SelectedIndex="0">
                 <ComboBoxItem Content="NP6089G"/>
             </ComboBox>
-            
+
             <Label Content="Adres IP Routera:"/>
             <TextBox x:Name="IpAddressInput" Text="192.168.0.1" Margin="0,0,0,10"/>
 
@@ -77,6 +77,7 @@
                 </Grid>
             </GroupBox>
         </StackPanel>
+        <Label Content="Wersja 1.0.0" HorizontalAlignment="Left" Margin="20,672,0,0" VerticalAlignment="Top" Height="20" Width="60" FontSize="8" Foreground="#FFA7A7A7" Grid.ColumnSpan="2"/>
     </Grid>
-    
+
 </Window>
