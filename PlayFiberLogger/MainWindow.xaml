@@ -1,0 +1,82 @@
+﻿<Window x:Class="PlayFiberLogger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayFiberLogger"
+        mc:Ignorable="d"
+        Title="Play Fiber Logger" Height="716" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <Label Content="Model urządzenia:"/>
+            <ComboBox x:Name="ModelSelector" Margin="0,0,0,10" SelectedIndex="0">
+                <ComboBoxItem Content="NP6089G"/>
+            </ComboBox>
+            
+            <Label Content="Adres IP Routera:"/>
+            <TextBox x:Name="IpAddressInput" Text="192.168.0.1" Margin="0,0,0,10"/>
+
+            <Label Content="Login:"/>
+            <TextBox x:Name="LoginInput" Text="admin" Margin="0,0,0,10"/>
+
+            <Label Content="Hasło:"/>
+            <PasswordBox x:Name="PasswordInput" Margin="0,0,0,10"/>
+
+            <Button x:Name="StartButton" Content="START" Click="StartButton_Click" Height="30" Margin="0,10,0,10" IsEnabled="True"/>
+            <Button x:Name="StopButton" Content="STOP" Click="StopButton_Click" IsEnabled="False"/>
+
+            <Label Content="Uzyskany SID:"/>
+            <TextBox x:Name="SidDisplay" IsReadOnly="True" Background="#F0F0F0" Margin="0,0,0,10"/>
+
+            <TextBlock x:Name="StatusLabel" Foreground="Gray" Text="Oczekiwanie..." HorizontalAlignment="Center"/>
+            <Label Content="Interwał odświeżania (sekundy):"/>
+            <TextBox x:Name="IntervalInput" Text="5" Margin="0,0,0,10"/>
+
+            <GroupBox Header="Parametry Światłowodu" Margin="0,10,0,0" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                        <TextBlock Text="Odebrana moc (Rx):" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="RxPowerLabel" Text="-- dBm" FontSize="18" FontWeight="Bold" Foreground="#2E7D32"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+                        <TextBlock Text="Nadana moc (Tx):" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="TxPowerLabel" Text="-- dBm" FontSize="18" FontWeight="Bold" Foreground="#1565C0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                        <TextBlock Text="Temperatura ONT:" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="TempLabel" Text="-- °C" FontSize="16"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                        <TextBlock Text="Napięcie:" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="VoltageLabel" Text="-- V" FontSize="16"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+                        <TextBlock Text="Prąd wejściowy:" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="BiasLabel" Text="-- mA" FontSize="16"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="5,15,5,5">
+                        <TextBlock Text="Status rejestracji ONT:" Foreground="Gray" FontSize="11"/>
+                        <TextBlock x:Name="StatusOntLabel" Text="Brak danych" FontStyle="Italic"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+    
+</Window>
